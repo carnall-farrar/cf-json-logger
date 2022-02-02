@@ -1,10 +1,11 @@
+from testfixtures import LogCapture
+
 from cf_json_logger import get_logger
 
-from testfixtures import LogCapture
 
 def test_get_logger():
     """
-    GIVEN 
+    GIVEN
     WHEN logger.info is called
     THEN python logger is returned
     """
@@ -21,9 +22,7 @@ def test_logger_info():
     """
     logger = get_logger()
 
-    with LogCapture() as l:
+    with LogCapture() as capture:
         logger.info("Test Output")
 
-    l.check(
-        ('root', 'info', 'Test Output')
-    )
+    capture.check(("root", "info", "Test Output"))

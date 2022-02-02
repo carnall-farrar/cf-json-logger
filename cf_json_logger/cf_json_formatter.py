@@ -1,5 +1,6 @@
-from datetime import datetime
 import pathlib
+from datetime import datetime
+
 from pythonjsonlogger import jsonlogger
 
 
@@ -9,10 +10,14 @@ class CarnallFarrarJsonFormatter(jsonlogger.JsonFormatter):
 
     See the docs for illustrative examples.
 
-    `log_record` is documented [here](https://docs.python.org/3/library/logging.html) at "LogRecord attributes"
+    `log_record` is documented [here](https://docs.python.org/3/library/logging.html)
+    at "LogRecord attributes"
     """
+
     def add_fields(self, log_record, record, message_dict):
-        super(CarnallFarrarJsonFormatter, self).add_fields(log_record, record, message_dict)
+        super(CarnallFarrarJsonFormatter, self).add_fields(
+            log_record, record, message_dict
+        )
         if not log_record.get("asctime"):
             now = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
             log_record["asctime"] = now

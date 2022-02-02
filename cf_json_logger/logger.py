@@ -7,7 +7,7 @@ def get_logger() -> logging.Logger:
     """
     Generate a standard logger which will respond to the python web services.
 
-    This should be standard across all services. 
+    This should be standard across all services.
 
     ```
     from cf_json_logger import get_logger
@@ -32,7 +32,16 @@ def get_logger() -> logging.Logger:
     logger = logging.getLogger()
     logHandler = logging.StreamHandler()
 
-    formatter = CarnallFarrarJsonFormatter("%(asctime)s %(level)s %(pathname)s %(module)s %(processName)s %(message)s")
+    formatter = CarnallFarrarJsonFormatter(
+        """
+        %(asctime)s
+        %(level)s
+        %(pathname)s
+        %(module)s
+        %(processName)s
+        %(message)s
+        """
+    )
 
     logHandler.setFormatter(formatter)
     logger.setLevel(logging.DEBUG)
