@@ -17,7 +17,7 @@ def test_logger_info():
     """
     GIVEN
     WHEN logger.info is called
-    THEN output is returned
+    THEN message is shown
     """
     logger = get_logger()
 
