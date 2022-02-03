@@ -7,7 +7,7 @@ Welcome to Carnall Farrar Logs's documentation!
 ===============================================
 
 .. automodule:: cf_json_logger
-   :members: 
+    :members:
 
 
 
