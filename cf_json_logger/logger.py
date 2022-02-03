@@ -9,13 +9,13 @@ def get_logger() -> logging.Logger:
 
     This should be standard across all services.
 
-    ```
-    from cf_json_logger import get_logger
+    .. code-block:: python
 
-    logger = get_logger()
+        from cf_json_logger import get_logger
 
-    logger.info("example message")
-    ```
+        logger = get_logger()
+
+        logger.info("Example message") 
     """
     logging.getLogger("werkzeug").setLevel(logging.ERROR)
     logging.getLogger("boto3").setLevel(logging.INFO)
