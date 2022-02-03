@@ -1,5 +1,8 @@
 [tool.poetry]
 name = "cf-json-logger"
+packages = [
+    { include = "cf_json_logger" },
+]
 version = "0.1.0"
 description = "Consistent web logs by Carnall Farrar Ltd."
 authors = ["Leo Edwards <leo.edwards@carnallfarrar.com>"]
