@@ -15,7 +15,7 @@ def get_logger() -> logging.Logger:
 
         logger = get_logger()
 
-        logger.info("Example message") 
+        logger.info("Example message")
     """
     logging.getLogger("werkzeug").setLevel(logging.ERROR)
     logging.getLogger("boto3").setLevel(logging.INFO)
